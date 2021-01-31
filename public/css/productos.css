@@ -1,0 +1,87 @@
+@import "style.css";
+
+.articulo-foto{
+    width: 300px;
+    margin-left: 60px;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.recuadro{
+    border: solid 1px gray;
+    margin-top: 20px;
+}
+
+.agregarProducto{
+    margin-left: 15px;
+    border: solid 1px;
+}
+
+.titulo-listado{
+    text-align: center;
+    box-shadow: 2px 2px 2px black;
+    text-shadow: black 2px 2px 5px;
+}
+.precio{
+    position: absolute;
+    padding: 10px;
+    background-color: yellow;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    top:10%;
+    left:5%;
+    border-radius: 9px;
+}
+
+.fotoArticulos{
+    margin-top: 20px;
+    height: 420px;
+
+}
+.fotoArticulos h3{
+    color: gainsboro;
+}
+.fotoArticulos img {
+    width: 80%;
+    border: solid 2px gray;
+    border-radius: 3%;
+    margin-top: 20px;
+    box-shadow: white 8px 5px 15px;
+}
+
+.fotoArticulos article{
+    text-align: center;
+}
+.fotoArticulos span{
+    color: #acf7a3;
+    font-weight: bold;
+}
+
+.fotoArticulos p{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: gray 2px 2px 5px;
+    position: absolute;
+    top: 54%;
+    right: 5%;
+    background-color: white;
+    border-radius: 3%;
+    width: 100px;
+    border: 1px solid black;
+}
+
+
+/* Media queries TABLET */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1023px) {
+    .articulo-foto{
+
+     width: 200px;
+     margin-left: 18px;
+    }
+    p.precio{
+        background-color: blue;
+    }
+    }

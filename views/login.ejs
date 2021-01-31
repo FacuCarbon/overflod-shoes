@@ -1,0 +1,51 @@
+<%-include('partials/head') %>
+
+    <main>
+
+        <div class="row mt-5">
+          
+            <section class="formulario mt-5">
+            <div class="col-12">
+                <div class="row d-flex justify-content-end">
+                    <!-- TITULO PRINCIPAL-->
+                    <a href="/">
+                      <h1 class="">OVERFLOD SHOES</h1>
+                    </a>
+                  
+                  </div>
+                  <hr>
+                <h2 class="my-4">¡Bienvenido!</h2>
+            </div>
+            <div class="col-12 login">
+
+                <form method="POST" id="login">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Correo electrónico</label>
+                      <input type="email" class="form-control" placeholder="" id="email" name="email">
+                      <small id="errorEmail" class="form-text text-warning"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" class="form-control" placeholder="" id="contraseña" name="password">
+                      <small id="errorContraseña" class="form-text text-warning"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %></small>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">
+                      <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-outline-light">Continuar</button>
+                    </div>
+                  </form>
+                  <div class="d-flex justify-content-around mt-4">
+                    <p>¿No tenés cuenta? <a href="/usuarios/registro">¡Regístraste!</a></p>
+                    <p>¿Olvidaste tu contraseña? <a href="">Click aquí</a></p>
+                  </div>
+
+            </div>
+            </section>
+        </div>
+    </main>
+    </body>
+
+    </html>

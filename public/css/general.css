@@ -1,0 +1,29 @@
+@import "style.css";
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+/* BODY */
+body{
+    background-image: url('../img/imgbody/21omxpw.jpg');
+    background-attachment: fixed;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* FIN DEL BODY */
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+    color: blue;
+    
+}
+
+a{
+    color: wheat;
+    text-decoration: none;
+}
+
+article a{
+    color: gray;
+}

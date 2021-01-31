@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--HEAD-->
+<%-include('partials/head') %>
+
+<body>
+
+  <!--HEADER-->
+  <%- include('partials/header') %>
+
+
+
+  <main>
+
+    <!-- TITULO PRINCIPAL-->
+
+
+
+
+    <section class="perfil">
+      <h2 class="titulo-modificar text-warning">Carga de productos</h2>
+      <br>
+      <div class="row">
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+          <form id="form" action="/productos/agregarProducto" method="POST" enctype="multipart/form-data">
+            
+            <label for="exampleInputEmail1">Nombre</label>
+            <input class="form-control" type="text" name="nombre" id="nombre" value="">
+            <span id="errorNombre" class="text-warning"></span>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Precio</label>
+          <input class="form-control" type="number" name="precio" id="precio" value="">
+          <span id="errorPrecio" class="text-warning"></span>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Categoria</label>
+          <select class="form-control" name="categoria" id="categoria">
+            <span id="errorCategoria" class="text-warning"></span>
+            <option value="">Elige una opción</option>
+            <% categories.forEach(categoria=> { %>
+            <option value="<%= categoria.id %>">
+              <%= categoria.nombre %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Marca</label>
+          <select class="form-control" name="marca" id="marca">
+            <span id="errorMarca" class="text-warning"></span>
+            <option value="">Elige una marca</option>
+            <% marca.forEach(marca=> { %>
+            <option value="<%= marca.id %>">
+              <%= marca.nombre %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Colores</label>
+          <select class="form-control" name="color" id="color">
+            <span id="errorColor" class="text-warning"></span>
+            <option value="">Elige un color</option>
+            <% colores.forEach(color=> { %>
+            <option value="<%= color.id %>">
+              <%= color.color %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Talle</label>
+          <select class="form-control" name="talle" id="talle">
+            <span id="errorTalle" class="text-warning"></span>
+            <option value="">Elige un talle</option>
+            <% talle.forEach(talle=> { %>
+            <option value="<%= talle.id %>">
+              <%= talle.talle %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Descripción</label>
+          <textarea class="form-control" name="descripcion" id="descripcion"
+            placeholder="breve descripción..."></textarea>
+          <span id="errorDescripcion" class="text-warning"></span>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <label for="exampleInputEmail1">Imagen</label>
+          <input class="form-control" type="file" name="imagen" id="imagen">
+          <span id="errorImagen" class="text-warning"></span>
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <button type="submit" class="btn btn-outline-light">Guardar</button>
+          <button type="reset" class="btn btn-outline-light">Restablecer</button>
+        </div>
+
+        </form>
+
+    </section>
+  </main>
+
+
+
+
+
+
+
+  <!--FOOTER-->
+  <%- include('partials/footer') %>
+
+
+
+</body>
+
+</html>
+
+<div>
+  <input type="file" name="" id="">
+</div>

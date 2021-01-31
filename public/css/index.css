@@ -1,0 +1,174 @@
+@import "style.css";
+
+/* CARRUSEL */ 
+.carrusel{
+    margin-top: 20px;
+}
+
+/* FIN CARRUSEL */
+
+
+/* ARTICULOS: CALZADOS - INDUMENTARIA - ACCESORIOS */
+.div-titulo{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 30px;
+    background-color: rgba(10, 10, 10, 0.5);
+}
+.div-titulo h5{
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+  
+}
+.fotoArticulo{
+    margin-top: 20px;
+    height: 420px;
+
+}
+.fotoArticulo h3{
+    color: gainsboro;
+}
+.fotoArticulo img {
+    width: 80%;
+    border: solid 2px gray;
+    border-radius: 3%;
+    margin-top: 20px;
+    box-shadow: white 8px 5px 15px;
+}
+
+.fotoArticulo article{
+    text-align: center;
+}
+.fotoArticulo span{
+    color: #acf7a3;
+    font-weight: bold;
+}
+
+.fotoArticulo p{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: gray 2px 2px 5px;
+    position: absolute;
+    top: 57%;
+    right: 5%;
+    background-color: white;
+    border-radius: 3%;
+    width: 100px;
+    border: 1px solid black;
+}
+.fotoArticulo a.carrito{
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    color: gray;
+}
+
+.volver-arriba{
+    margin-top: 50px;
+    margin-left: 20px;
+    
+}
+.volver-arriba a{
+    color: blue;
+}
+.volver-arriba p{
+    margin-left: 5px;
+    text-align: left;
+}
+
+.verTodos{
+    margin-left: 45%;
+    border: solid 1px;
+}
+/* Media queries TABLET */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1023px){
+
+    .carrusel{
+        width: 680px;
+        margin-left: 42px;
+    }
+
+     .fotoArticulo img{
+        width: 90%;
+        margin: 0px;
+        margin-left: 3px;
+}
+
+    .fotoArticulo h3{
+    font-size: 20px;
+}
+.verTodos{
+    margin-left: 40%;
+}
+
+
+.fotoArticulo p{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: gray 2px 2px 5px;
+    position: absolute;
+    top: 46%;
+    right: 5%;
+    background-color: white;
+    border-radius: 3%;
+    width: 100px;
+    border: 1px solid black;
+}
+.fotoArticulo{
+    height: 300px;
+
+}
+}
+
+/* Media queries Dispositivo Moviles */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {
+
+
+    .nav-tabs{
+        padding: 0;
+        
+    }
+    .carousel{
+        display: none;
+        }
+        /* Fin carrusel */
+        .fotoArticulo img{
+            width: 230px;
+        }
+        /* Fin articulos */
+    
+        .volver-arriba{
+        margin-left: 45%;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        }
+
+        .verTodos{
+            margin-left: 35%;
+        }
+
+        .fotoArticulo p{
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: black;
+            text-shadow: gray 2px 2px 5px;
+            position: absolute;
+            top: 48%;
+            right: 15%;
+            background-color: white;
+            border-radius: 3%;
+            width: 100px;
+            border: 1px solid black;
+        }
+    }
+        /* Fin boton ir arriba */

@@ -1,0 +1,27 @@
+@import "style.css" ;
+
+section{
+    width: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.carga{
+    text-shadow: 2px 2px 5px black;
+}
+.nombreProducto{
+    font-size: 25px;
+}
+
+.editarNombre{
+    font-size: 25px;
+}
+.editarPrecio{
+    font-size: 25px;
+}
+.editarCategoria{
+    font-size: 25px;
+}
+
+.descrip{
+    background-color: cornsilk;
+}

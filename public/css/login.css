@@ -1,0 +1,93 @@
+@import "style.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    width: 600px;
+    background:rgba(36, 48, 60,.5);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    color: white;
+    padding: 10px 20px;
+    margin: auto;
+    margin-bottom: 100px;
+    border-radius: 4px;
+    border: solid 3px black;
+}
+section h4{
+    color: whitesmoke;
+}
+section h2{
+    width: 100%;
+    color: whitesmoke;
+}
+section p {
+    text-align: center;
+}
+section .datos{
+    width: 100%;
+    background: 24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid;
+}
+section .boton-continuar{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: whitesmoke;
+    margin: 16px 0;
+    font-size: 16px;
+    line-height: 40px;
+}
+section .boton-cancelar{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: whitesmoke;
+    margin: 16ox 0;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* Media queries TABLET */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1023px) {
+
+form .datos{
+    margin-left: 30%;
+}
+
+.boton-continuar{
+    margin-left: 37%;
+}
+
+}
+
+/* Media queries Dispositivo Moviles */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {
+
+    form .datos{
+        margin-left: 8%;
+    }
+
+    .boton-continuar{
+        margin-left: 24%;
+    }
+}

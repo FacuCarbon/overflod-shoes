@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--HEAD-->
+<%-include('partials/head') %>
+
+<body>
+
+  <!--HEADER-->
+  <%- include('partials/header') %>
+
+
+
+  <div class="row">
+    <section>
+      <h1 class="text-warning carga">Editar producto</h1>
+      <form id="form" action="/productos/editarProducto/<%= producto.id %>?_method=PUT" method="POST">
+        <div class="form-group col-lg-6 col-md-10 col-sm-12 col-xs-12 float-left">
+          <h2>Edicion</h2>
+
+          <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <label class="editarNombre label m-3" for="exampleInputEmail1">Nombre</label>
+            <input class="form-control m-3" type="text" name="nombre" value="<%= producto.nombre %>" id="nombre">
+            <span id="errorNombre" class="text-warning"></span>
+          </div>
+
+          <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <label class="editarPrecio m-3" for="exampleInputEmail1"> Precio</label>
+            <input class="form-control m-3" type="number" name="precio" value="<%= producto.precio %>" id="precio">
+            <span id="errorPrecio" class="text-warning"></span>
+          </div>
+
+          <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <label class="editarCategoria m-3" for="exampleInputEmail1">Categoria</label>
+            <select class="form-control m-3" name="categoria" value="<%= producto.categoria %>" id="categoria">
+              
+              <option value="<%= producto.categoria.id %>">
+                <%= producto.categoria.nombre %>
+              </option>
+            </select>
+            <span id="errorCategoria" class="text-warning"></span>
+          </div>
+
+          <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <label class="editarCategoria m-3" for="exampleInputEmail">Descripcion</label>
+            <textarea name="descripcion" id="descripcion" class="form-control m-3" placeholder="<%= producto.descripcion %>"></textarea>
+                <span id="errorDescripcion" class="text-warning"></span>
+                
+          </div>
+          <br>
+          <button type="submit" class="btn btn-outline-light ml-5">Guardar</button>
+        </div>
+
+      </form>
+      <!--detalles Actuales-->
+      <div>
+        <div class="form-group col-lg-6 col-md-10 col-sm-12 col-xs-12 float-right">
+          <h2 class="mb-5">Detalles actuales</h2>
+
+          <figure class="figure-datos-actuales c-black col-10 ml-3">
+            <a class="nombreProducto mt-5" href="/productos/detalle/<%= producto.id %>"> Nombre: <%= producto.nombre %>
+            </a>
+            <p class="form-control my-5">Precio: $ <%= producto.precio %>
+            <p class="form-control my-5">Categoria: <%= producto.categoria.nombre %>
+            <p class="form-control my-5 descrip">Descripción: <%= producto.descripcion %>
+              <img class="figure-img img-fluid rounded w-50" src="/img/productosAgregados/<%= producto.imagenes %>"
+                alt="" /></a>
+          </figure>
+        </div>
+      </div>
+
+      <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-outline-light mt-3 ml-5">Eliminar producto</button>
+      </form>
+    </section>
+  </div>
+
+
+
+
+
+  <!--FOOTER-->
+  <%- include('partials/footer') %>

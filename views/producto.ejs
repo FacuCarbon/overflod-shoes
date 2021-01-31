@@ -1,0 +1,101 @@
+<!--HEAD-->
+<%-include('partials/head') %>
+
+<body>
+
+    <!--HEADER-->
+    <%- include('partials/header') %>
+
+
+    <main>
+
+        <div class="row mt-5">
+
+            <section class="detalleProducto mt-5">
+
+                <div class="col-12 login p-4">
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h2 class="detalle-titulo text-warning"> <%= producto.nombre %></h2>
+                            <h1 class="detalle-titulo2 text-warning">$ <%= producto.precio %></h1>
+                            <h4 class="detalle-titulo2">Descripcion: </h4>
+                            <p class="detalle-titulo2"><%= producto.descripcion %></p>
+                            <hr>
+                           <!--  <h5 class="detalle-titulo2">categoria: <%= producto.categoria.nombre %> </h5>
+
+                            <hr>
+                            <h5 class="detalle-titulo2">marca: <%= producto.marca.nombre %></h5>
+ -->
+                           
+
+                            <h4 class="detalle-titulo2">Colores y talles</h4>
+                            <div class="d-flex justify-content-around mt-3 p-4">
+                                <select class="select-color" name="" id="">
+                                    <option value="">Color disponible</option>
+                                    <option value="<%= producto.color.color %>"><%= producto.color.color %></option>
+                                </select>
+    
+                                <select class="select-talle" name="" id="">
+                                    <option value="">Talle disponible</option>
+                                    <option value="<%= producto.talle.talle %>"><%= producto.talle.talle %></option>
+                                </select>
+                            </div>
+                           
+                        </div>
+                        <div class="col-12 col-md-6 text-center my-auto">
+                            <img class="detalle-imagen" src="/img/productosAgregados/<%= producto.imagenes %> "
+                                alt="img_producto">
+                                <br>
+                                <a href="/productos/carrito/<%= producto.id %>" class="btn btn-warning mt-4">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <% if (typeof usuario !== "undefined" && usuario.rango == 'administrador') { %>
+                    <a class="btn btn-outline-light" href="/productos/editarProducto/<%= producto.id %>">Editar</a>
+                </div>
+               
+                    <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+            
+            
+                        <button type="submit" class="btn btn-outline-light">Eliminar producto</button>
+            
+            
+                    </form>
+                    
+                       
+                      
+                  
+                    <% } %>
+            </section>
+        </div>
+    </main>
+   
+
+      
+        
+
+       
+          
+    <% if (typeof usuario !== "undefined" && usuario.rango == 'administrador') { %>
+            
+        <% } %>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--FOOTER-->
+    <%- include('partials/footer') %>

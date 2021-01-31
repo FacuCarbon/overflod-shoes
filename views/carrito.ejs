@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--HEAD-->
+<%-include('partials/head') %>
+
+<body>
+
+    <!--HEADER-->
+    <%- include('partials/header') %>
+    <!--FIN HEADER-->
+
+    <main>
+
+        <div class="row">
+
+            <section class="mt-5">
+
+            
+               
+               <div class="col-12">
+               
+                  <h2 class="text-warning"> <%= producto.nombre %> </h2>
+                </div>
+
+                <div class="col-lg-6 col-md-6 float-right mt-5">
+                    <img class="carrito-imagen" src="/img/productosAgregados/<%= producto.imagenes %> "
+                        alt="img_producto">
+                        <h3 class="text-warning precio-carrito">$<%= producto.precio %></h3>
+
+                        <a class="btn btn-outline-light mt-4 comprar">Comprar</a>
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  " id="">
+                    <label class="mt-5" for="exampleInputEmail">Formas de pago disponibles</label>
+                    <select class="form-control" name="" id="">
+                        
+                        <option value="">Efectivo (Forma de pago disponible solo en nuestras tiendas oficiales)</option>
+                        <option value="">Visa (3, 6 y hasta 9 cuotas sin interes)</option>
+                        <option value="">Mastercard (Hasta 24 cuotas sin interes)</option>
+                        <option value="">Para otras formas de pago, escribanos a contacto@overflodShoes.com</option>
+                      </select>
+                      
+                      <label class="mt-5" for="exampleInputEmail">Indique una cantidad</label>
+                    <select class="form-control" name="" id="">
+                        
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <label class="mt-5" for="exampleInputEmail">Colores disponibles</label>
+                      <select class="form-control" name="color" id="color">
+                        
+                        <option value="">Elige un color</option>
+                        
+                        <option value="">
+                          <%= producto.color.color %>
+                        </option>
+                       
+                      </select>
+
+                      <label class="mt-5" for="exampleInputEmail">Talles disponibles</label>
+                      <select class="form-control" name="talle" id="talle">
+                        
+                        <option value="">Elige un talle</option>
+                        
+                        <option value="">
+                          <%= producto.talle.talle %>
+                        </option>
+                       
+                      </select>
+ </div>
+
+               
+
+                        <div class="col-12 mt-5">
+                <h4 class="detalle-carrito">Descripcion: </h4>
+                <p class="detalle-carrito text-warning"><%= producto.descripcion %></p>
+            </div>
+            
+                </section>
+                </div>
+                </main>
+
+    <!--Boton volver arriba-->
+
+    <div class="volver-arriba">
+        <a href="#">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+            </svg></a>
+        
+    </div>
+    <!--FOOTER-->
+    <%- include('partials/footer') %>
+</body>

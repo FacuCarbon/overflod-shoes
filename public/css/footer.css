@@ -1,0 +1,94 @@
+@import "style.css";
+
+/* Footer */
+
+.redes{
+   
+    background-color: black;
+    margin-bottom: 10px;
+}  
+.redes img{
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.redes p{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 25px;
+    color: blanchedalmond;
+}
+
+.formas-pago{
+    text-align: center;
+    padding: 0;
+}
+.formas-pago p{
+    margin-bottom: 0px;
+}
+
+.div-footer{
+    margin-left: 10px;
+}
+.div-footer h4, h5, h6, p, li{
+    color: #140303;
+    list-style: none;
+}
+
+.nosotros li{
+    list-style: none;
+    font-size: 20px;
+}
+
+/* FIN DEL FOOTER */
+
+/* Media queries TABLET */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1023px) {
+    
+.redes p{
+    margin-left: 0;
+    font-size: 15px;
+}
+.formas-pago li{
+    margin-right: 40px;
+}
+}
+
+/* Media queries Dispositivo Moviles */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {
+
+
+    .redes p{
+        margin-left: 10%;
+    }
+    .info-redes{
+        margin-top: 25px;
+        margin-left: 30%;
+    }
+
+    .div-footer{
+        margin-left: 50px;
+    }
+    .modificado{
+        margin-right: 64px;
+    }
+
+    .formas-pago li{
+        margin-right: 50%;
+    }
+
+    .nosotros h6{
+        margin-left: 20px;
+    }
+
+    .div-footer h6{
+        margin-left: 30px;
+    } 
+
+    /* Fin footer */
+}

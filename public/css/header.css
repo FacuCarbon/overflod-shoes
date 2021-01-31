@@ -1,0 +1,143 @@
+@import "style.css";
+/* HEADER */
+.login li{
+    float: right;
+    color: white;
+    margin-right: 10px;
+    list-style: none;
+    margin-top: 5%;
+   }
+.login{
+   color: beige;
+}
+.icono{
+   width: 100px;
+}
+.bienvenido{
+   text-shadow: 2px 2px 5px black;
+}
+
+.titulo-P{
+   font-size: 4.5rem;
+   font-weight: bolder;
+   color: gray;
+   text-shadow: 2px 2px 5px black;
+}
+
+
+.logo{
+   border-radius: 50%;
+   border: 2px solid silver;
+   width: 40%;
+  
+}
+
+.barra{
+   margin-top: 20px
+   
+}
+.barra input{
+   width: 500px;
+   background-color: black;
+   border: solid 1px #181f25;
+   border-radius: 30px;
+   height: 40px;
+   color: white;
+   padding-left: 10px;
+}
+.boton-barra{
+   border: solid 1px #181f25;
+   background-color: gray;
+   border-radius: 30px;
+   height: 36px;
+   width: 61px;
+}
+.nav-item{
+   padding-right: 15px;
+ }
+ .menu{
+   margin-top: 30px;
+   background-color: gray;
+   
+ }
+.seccion{
+   margin-left: 10%;
+   font-weight: bolder;
+   
+}
+.seccion li{
+   background-color: rgb(25, 31, 37);
+}
+
+.dropdown-menu{
+   background-color: gray;
+}
+.dropdown-menu a{
+   border-bottom: solid 1px whitesmoke;
+}
+.categoria{
+   color:gray;
+}
+
+.botones{
+   width: 200px;
+}
+
+/* Media queries TABLET */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    
+   .logo{
+      border-radius: 50%;
+      border: 2px solid silver;
+      width: 60%;
+     
+   }
+   .titulo-P{
+      font-size: 2.5rem;
+     
+   }
+    .barra input{
+        width: 350px;
+    }
+
+    .nav-tabs{
+        padding-left: 10%;
+    }
+
+    .botones{
+      width: 120px;
+   }
+}
+
+/* Media queries Dispositivo Moviles */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {
+
+  
+    
+
+    .titulo-P{
+      text-align: center;    
+      font-size: 2.5rem;
+   }
+    .barra input{
+        width: 250px;
+    }
+
+    .nav-tabs{
+    padding: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
+    }
+
+    .categoria{
+     padding-left: 0;
+     margin-left: 40px;
+    }
+
+     /* Fin del header */
+}

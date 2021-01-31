@@ -1,0 +1,71 @@
+<header class="container-fluid">
+
+  <div class="row py-4">
+
+    <div class="col-lg-9 col-md-7 col-sm-6 col-xs-6 barra">
+      <form action="/productos/buscar" method="GET">
+        <input type="search" name="search" placeholder="zapatillas, remeras, calzas, y muchos más!" aria-label="Search">
+        <button class="boton-barra" type="submit">search</button>
+      </form>
+    </div>
+
+    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-6">
+      <ul class="login">
+        <% if (typeof usuario == "undefined") { %>
+
+        <li><a href="/usuarios/registro" class="btn-sm btn-light">REGISTRARSE</a></li>
+        <li><a href="/usuarios/login" class="btn-sm btn-outline-light">INGRESAR</a></li>
+          
+
+        <% } else {%>
+        <h5 class="text-white text-right m-2 bienvenido">Bienvenido/a <%- usuario.nombre + ' ' + usuario.apellido %></h5>
+        <li><a href="/usuarios/logout">Cerrar sesión</a></li>
+        <li><a href="/usuarios/perfil"> Mi perfil - </a> </li>
+        <li><a href="#">Mi compra -</li>
+        <li><% if (typeof usuario !== "undefined" && usuario.rango == 'administrador') { %>
+          <a class="agregarProducto" href="/productos/agregarProducto">Agregar nuevo producto</a>
+          <% } %></li>
+
+        <% } %>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center text-center p-3">
+      <!-- LOGOTIPO-->
+      <a href="/"><img src="/img/logo/logo-negro.jpeg" alt="logotipo" class="logo"></a>
+    </div>
+    <div class="col-md-8 col-sm-12 col-xs-12 px-4">
+      <div class="row d-flex justify-content-end">
+        <!-- TITULO PRINCIPAL-->
+        <a href="/">
+          <h1 class="titulo-P m-2">OVERFLOD SHOES</h1>
+        </a>
+      </div>
+      <div class="row d-flex justify-content-end">
+        <!-- MENU-->
+
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item my-3 ">
+            <a class="btn btn-outline-light botones" href="/">Inicio</a>
+          </li>
+          <li class="nav-item my-3  ">
+            <a class="btn btn-outline-light botones" href="/productos">Productos</a>
+          </li>
+          <li class="nav-item my-3 ">
+            <a class="btn btn-outline-light botones" href="/">Contacto</a>
+          </li>
+        </ul>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+</header>
+<!--FIN DEL HEADER-->

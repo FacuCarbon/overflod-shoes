@@ -1,0 +1,49 @@
+<%- include('partials/head')  %>
+<%- include('partials/header') %>
+<!-- <div class="row">
+  <div class="col-12">
+    <h1 class="titulo-listado">Listado de Productos</h1>
+    <% if (typeof usuario !== "undefined" && usuario.rango == 'administrador') { %>
+      <a class="agregarProducto" href="/productos/agregarProducto">Agregar nuevo producto</a>
+      <% } %>
+  </div>
+  <% productos.forEach(producto => { %>
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 recuadro">
+    <div class="contenido">
+      <figure>
+        <img class="articulo-foto" src="/img/productosAgregados/<%= producto.imagenes %> " alt="" /></a>
+        <h4> <a href="/productos/detalle/<%= producto.id %>"> <%= producto.nombre %> </a> </h4>
+        <h4> $<%= producto.precio %> </h4>
+        <p> Categoria: <%= producto.categoria.nombre %> </p>
+        <p>Marca: <%= producto.marca.nombre %></p>
+      </figure>
+    </div>
+  </div>
+  <% }) %>
+</div> -->
+
+<div class="container">
+  <div class="row calzado mt-5">
+    <div class="col-12">
+          
+      <h1 class="text-warning titulo-listado" >Nuestros productos</h1> </div>
+    <% productos.forEach(producto => { %>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 fotoArticulos">
+      <!-- CALZADO 1-->
+      <div class="p-1 text-center" style="height: 350px;">
+        <figure>
+          <a href="/productos/detalle/<%= producto.id %>"><img src="/img/productosAgregados/<%= producto.imagenes %>" alt=""></a>
+        </figure>
+        <article>
+          <h3> <%= producto.nombre %></h3>
+          <p class="marca"><%= producto.marca.nombre %> </p>
+         
+        </article>
+        <h4 class="precio"> $<%= producto.precio %> </h4>
+
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('partials/footer')  %>

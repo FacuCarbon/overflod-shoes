@@ -1,0 +1,50 @@
+@import "style.css";
+
+.carrito-imagen{
+    margin-left: 30%;
+    width: 60%;
+    border-radius: 40px;
+    border: solid 2px black
+}
+
+.comprar{
+    margin-left: 50%;
+}
+.precio-carrito{
+    margin-left: 15%;
+}
+
+/* Media queries TABLET */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1023px) {
+
+    .carrito-imagen{
+        margin-left: 21%;
+        width: 80%;
+    }
+    .precio-carrito{
+        margin-left: 24%;
+    }
+
+}
+
+/* Media queries Dispositivo Moviles */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {
+
+    .carrito-imagen{
+        margin-left: 13%;
+        width: 74%;
+    }
+
+    .precio-carrito{
+        margin-left: 0%;
+    }
+    
+    .comprar{
+        margin-left: 37%;
+    }
+}

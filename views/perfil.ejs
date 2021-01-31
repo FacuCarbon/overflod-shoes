@@ -1,0 +1,79 @@
+<%-include('partials/head') %>
+
+    <%-include('partials/header') %>
+
+        <body>
+
+
+            <main>
+                <% if (typeof usuario !="undefined" ) { %>
+                    <!-- TITULO PRINCIPAL-->
+
+
+
+
+                    <section class="perfil">
+                        <h2 class="titulo-modificar text-warning">Mis datos / Modificar datos</h2>
+                        <br>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+
+                                <form action="/usuarios/perfil/<%= usuario.id %>?_method=PUT" method="POST">
+
+                                    <label for="exampleInputEmail1">Nombre</label>
+                                    <input class="form-control" type="text" name="nombre" id="nombre"
+                                        value="<%= usuario.nombre %>">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                <label for="exampleInputEmail1">Apellido</label>
+                                <input class="form-control" type="text" name="apellido" id="apellido"
+                                    value="<%= usuario.apellido %>">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                <label for="exampleInputEmail1">Nacimiento(*)</label>
+                                <input class="form-control" type="date" name="fecha" id="fecha"
+                                    value="<%= usuario.fecha %>">
+                            </div>
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                <label for="exampleInputEmail1">Ciudad(*)</label>
+                                <input class="form-control" type="text" name="ciudad" id="ciudad"
+                                    value="<%= usuario.ciudad %>">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                <label for="exampleInputEmail1">Direccion(*)</label>
+                                <input class="form-control" type="text" name="direccion" id="direccion"
+                                    value="<%= usuario.direccion %>">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                <label for="exampleInputEmail1">Provincia(*)</label>
+                                <input class="form-control" type="text" name="provincia" id="provincia"
+                                    value="<%= usuario.provincia %>">
+                            </div>
+
+                            <!--Cambiar nivel de usuario, solo administradores-->
+
+                            <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                <label for="exampleInputEmail1">Nivel administrativo</label>
+                                <input class="form-control" type="text" name="rango" id="rango"
+                                    value="<%= usuario.rango %>">
+                            </div>
+
+                            <% } %>
+                                <span class="text-danger">(*) Datos opcionales</span>
+                                <button type="submit" class="btn btn-outline-light mt-5">Guardar</button>
+                                </form>
+
+                                <form action="/usuarios/eliminar/<%= usuario.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-outline-light mt-5 ml-3">Eliminar
+                                        usuario</button>
+                                </form>
+                    </section>
+            </main>
+
+        </body>
+
+        <%-include('partials/footer') %>
