@@ -57,9 +57,9 @@ La aplicación fue presentada como proyecto básico, un simple e-commerce que al
 ✪Se agregó CheckOut de MercadoPago(Version básica)
 
 
->**Desarrollador principal: Facundo Carbón.**
+**Desarrolladores:** 
 
-**Colaboradores V1.0:**
+>**Facundo Carbón.**
 
 ➳Vanesa Sinopoli.
 
