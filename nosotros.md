@@ -59,7 +59,8 @@ La aplicación fue presentada como proyecto básico, un simple e-commerce que al
 
 **Desarrolladores:** 
 
->**Facundo Carbón.**
+>**Facundo Carbón.** @FacuCarbon
+[https://github.com/FacuCarbon]
 
 ➳Vanesa Sinopoli. @edithsinopoli
 [https://github.com/edithsinopoli]
