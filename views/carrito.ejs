@@ -28,7 +28,6 @@
                         alt="img_producto">
                         <h3 class="text-warning precio-carrito">$<%= producto.precio %></h3>
 
-                        <a class="btn btn-outline-light mt-4 comprar">Comprar</a>
                 </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  " id="">
                     <label class="mt-5" for="exampleInputEmail">Formas de pago disponibles</label>
@@ -41,7 +40,7 @@
                       </select>
                       
                       <label class="mt-5" for="exampleInputEmail">Indique una cantidad</label>
-                    <select class="form-control" name="" id="">
+                    <select class="form-control" name="quantity" id="">
                         
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -77,6 +76,17 @@
                         <div class="col-12 mt-5">
                 <h4 class="detalle-carrito">Descripcion: </h4>
                 <p class="detalle-carrito text-warning"><%= producto.descripcion %></p>
+            </div>
+
+            <div class="col-12">
+              <form action="/productos/comprar/<%= producto.id %>" method="POST">
+                <input type="hidden" name="id" value="<%= producto.id %>">
+                <input type="hidden" name="title" value="<%= producto.nombre %>">
+                <input type="hidden" name="price" value="<%= producto.precio %>">
+                <input type="hidden" name="quantity value="quantity">
+                <input type="hidden" name="description" value="<%= producto.descripcion %>">
+                <button class="btn btn-outline-light mt-4 comprar">Generar pago</button>
+              </form>
             </div>
             
                 </section>

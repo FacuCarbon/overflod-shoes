@@ -21,7 +21,7 @@ var productosMD = require('../middleware/productosMD')
 router.get('/'  ,productosController.listado);
 
 // Detalle del producto /productos/detalle/:id
-router.get('/detalle/:id',validarSiLogeo ,productosController.detalle);
+router.get('/detalle/:id', validarSiLogeo, productosController.detalle);
 
 // Buscador interno
 router.get('/buscar' ,productosController.buscador);
@@ -40,7 +40,15 @@ router.put('/editarProducto/:id', productosMD ,productosController.editar)
 router.delete('/eliminar/:id',validarSiLogeo ,productosController.eliminar)
 
 // Carrito de compras /productos/carrito
-router.get('/carrito/:id', validarSiLogeo ,productosController.carrito);
+router.get('/carrito/:id', validarSiLogeo, productosController.carrito);
+
+// metodo comprar - mercado pago
+
+router.post('/comprar/:id', productosController.comprar)
+
+router.get('/callback', productosController.callback);
+
+router.post('/notifications', productosController.notifications)
 
 
 module.exports = router;

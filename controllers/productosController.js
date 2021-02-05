@@ -1,6 +1,19 @@
 const fs = require('fs')
 const path = require('path');
 
+// requerimos mercado pago
+
+const mercadopago = require('mercadopago');
+const bodyParser = require('body-parser')
+
+
+// accesos mercado pago
+
+mercadopago.configure({
+    access_token: 'APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398',
+    integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
+})
+
 /*let productos = fs.readFileSync(path.join(__dirname, '..', 'data', 'productos.json'), 'utf-8')
 productos = JSON.parse(productos)
 
@@ -9,7 +22,8 @@ usuarios = JSON.parse(usuarios) */
 
 const db = require('../db/models')
 const {validationResult}= require('express-validator')
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
+const { url } = require('inspector');
 let Op= Sequelize.Op;
 
 module.exports = {
@@ -32,40 +46,11 @@ module.exports = {
                 usuario: req.session.user
             })
         })
+
+        
         
     },
-    carrito: (req,res) =>{
-
-        db.Products.findOne({
-            where : {
-                id: req.params.id
-            },
-            include : [
-                {
-                    association: 'categoria'
-                },
-                {
-                    association: 'marca'
-                },
-                {
-                    association: 'talle'
-                },
-                {
-                    association: 'color'
-                }
-            ]
-        })
-        
-        .then(producto => {
-        res.render('carrito', { 
-            title: 'Carrito de compras',
-            css: 'carrito.css',
-            producto: producto,
-            usuario: req.session.user
     
-    })
-})
-},
 detalle: function(req,res){
      
             db.Products.findOne({
@@ -243,5 +228,150 @@ vistaAgregar: (req,res) =>{
             .catch(errores => {
                 res.send(errores)
             })
+    },
+
+    carrito: (req,res) =>{
+
+        db.Products.findOne({
+            where : {
+                id: req.params.id
+            },
+            include : [
+                {
+                    association: 'categoria'
+                },
+                {
+                    association: 'marca'
+                },
+                {
+                    association: 'talle'
+                },
+                {
+                    association: 'color'
+                }
+            ]
+        })
+        
+        .then(producto => {
+        res.render('carrito', { 
+            title: 'Carrito de compras',
+            css: 'carrito.css',
+            producto: producto,
+            usuario: req.session.user
+    
+    })
+})
+},
+
+callback: (req,res) =>{
+    console.log(req.query);
+
+    if(req.query.status.includes('success')){
+       return res.render('success')
     }
+
+    if(req.query.status.includes('pending')){
+        return res.render('pending')
+     }
+
+     if(req.query.status.includes('failure')){
+        return res.render('failure')
+     }
+
+     return res.status(404).end()
+    
+},
+
+notifications: (req,res) =>{
+
+    console.log('webhook', req.body);
+    res.send(req.body)
+    // le respondemos a MP que llego la informacion
+    res.status(200).end('OK')
+
+},
+
+comprar: (req, res) => {
+
+    const host = 'http://localhost:3000/productos/'
+
+        const url = host + 'callback?status='
+        
+
+        let preference = {
+
+             // datos del producto
+        items: [
+            {
+
+            id: '1234',
+            picture_url: 'https://mercadopago12345.heroku.com/images/products/jordan.jpg',
+            title: req.body.title,
+            unit_price: Number(req.body.price),
+            quantity: 2
+        }],
+
+
+            // volver al sitio, dependiendo del status de la compra
+            back_urls: {
+
+                success:  url + 'success',
+
+                pending: url + 'pending',
+
+                failure: url + 'failure'
+            },
+
+
+        auto_return: 'approved',
+
+        // informacion de pagador
+        payer: {
+            name: 'Ryan',
+            surname: 'Dahl',
+            email: 'test_user_63274575@testuser.com',
+
+            phone: {
+                area_code: '11',
+                number: 55556666
+            },
+
+            address: {
+                zip_code: '1234',
+                street_name: 'Monroe',
+                street_number: 860
+            },
+        },
+        payment_methods: {
+            // maximo 12 cuotas
+            installments: 12,
+
+            // excluimos visa
+            excluded_payment_methods: [{
+                id: 'visa'
+            }],
+
+            // excluimos atm
+            excluded_payment_types: [{
+                id: 'atm'
+            }, ]
+        },
+       
+        external_reference: 'facundocarbon2015@gmail.com'
+    }
+
+    mercadopago.preferences.create(preference)
+
+        .then(response => {
+            global.init_point = response.body.init_point;
+            res.render('confirm')
+        })
+        .catch(error => {
+
+            console.log(error)
+
+            res.send('error')
+        })
+}
+
 }

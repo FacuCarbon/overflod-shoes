@@ -80,6 +80,14 @@
     text-align: left;
 }
 
+.elNombre:hover{
+    transition: 300ms;
+}
+
+.elNombre p{
+    transition: 300ms;
+}
+
 .verTodos{
     margin-left: 45%;
     border: solid 1px;
