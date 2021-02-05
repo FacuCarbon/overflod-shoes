@@ -61,8 +61,11 @@ La aplicación fue presentada como proyecto básico, un simple e-commerce que al
 
 >**Facundo Carbón.**
 
-➳Vanesa Sinopoli.
+➳Vanesa Sinopoli. @edithsinopoli
+[https://github.com/edithsinopoli]
 
-➳Leonel Bravo.
+➳Leonel Bravo. @leonelbravo 
+[https://github.com/leonelbravo]
 
-➳Emilce Gomez.
+➳Emilce Gomez. @emilcegom-19
+[https://github.com/emilcegom-19]
